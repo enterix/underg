@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<title>Portal undergame.net</title>
+	<meta http-equiv='Content-Type' content='text/html'; charset='UTF-8'>
+	
+	<%= javascript_include_tag 'application' %>
+	<%= stylesheet_link_tag 'application' %>
+	
+	<script type='text/javascript'>pageStart() </script>
+</head>
+
+<body>
+	<header>
+		<%= render '/layouts/logo' %>
+		<%= render '/layouts/menu' %>
+	</header>
+	<div id='loading_mark'></div>
+	<div id='main'>
+		<%= yield %>
+	</div>
+	<%= render '/layouts/footer' %>
+
+</body>
+
+<script type='text/javascript'>
+	fix_size()	//fix fize for window after loading page
+</script>

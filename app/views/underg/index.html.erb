@@ -1,0 +1,10 @@
+<div id='text_1' class='text_block scroll-pane'>
+	<%= form_tag("/", method: "get", class: 'data-pjax') do %>
+	  <%= label_tag(:q, "Search") %>
+	  <%= text_field_tag(:q) %>
+	  <%= submit_tag("Search") %>
+	<% end %>
+	<%= @message %>
+	<br>
+	a
+</div>

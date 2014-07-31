@@ -1,0 +1,39 @@
+#menu_line {
+	width: 100%;
+	background-color: #303030;
+	height: 40px;
+}
+
+#css-menu {
+	margin-left: 10%;
+}
+
+#css-menu ul {
+	margin: 0;
+	padding: 0 0;
+	list-style: none;
+	font-family: Impact, fantasy;
+	font-size: 18px;
+	width: 100%;
+}
+
+#css-menu ul li {
+	width: 10em;
+	float: left;	/*Changes type of the menu (horizontal/vertical)*/
+	height: 40px;
+	background-color: #303030;
+}
+
+#css-menu ul li  a {
+	display: block;
+	text-decoration: none;
+	color: #fefefe;
+	width: 100%;
+	line-height: 40px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.css-menu-central {
+	border-left: 1px solid blue;
+}
