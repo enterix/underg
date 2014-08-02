@@ -1,6 +1,5 @@
 class UndergController < ApplicationController
-	def inde123()
-    2
+	def index()
 		@message = "test"
 		render :layout => !pjax?
 	end
