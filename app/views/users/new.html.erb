@@ -1,0 +1,29 @@
+<script>function checkForm(){
+    pass1 = document.getElementById("user_password").value
+    pass2 = document.getElementById("user_pass_confirm").value
+    name = document.getElementById("user_nickname").value
+    if(pass1 != pass2){
+        document.getElementById("confirm_error").innerHTML = "Пароли не совпадают"
+        event.preventDefault();
+    }
+    if(pass1 == "" || name == "") {
+        document.getElementById("confirm_error").innerHTML = "Вы не заполнили все поля"
+        event.preventDefault();
+    }
+}   </script>
+
+<div id='text_1' class='text_block scroll-pane'>
+  <%= form_for @user, url: {action: "create"}, html: {onsubmit: "checkForm()", class: 'data-pjax'} do |f| %>
+      <%= label_tag(:q, "Имя:") %> <br>
+      <%= f.text_field :nickname %>
+      <br>
+      <%= label_tag(:q, "Пароль:") %> <br>
+      <%= f.password_field :password %>
+      <br>
+      <%= f.password_field :pass_confirm %><div id="confirm_error"></div>
+      <br>
+
+      <%= f.submit "Create" %>
+
+  <% end %>
+</div>

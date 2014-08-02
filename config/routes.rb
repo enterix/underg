@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 	root 'underg#index'
 	get '/about_us', to: 'underg#aboutUs'
-	get 'account', to: 'underg#account'
+  post '/users/login', to: 'users#login'
+  get '/users/login', to: 'users#login'
+  resources :users, except: :destroy
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
