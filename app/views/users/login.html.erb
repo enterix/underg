@@ -1,4 +1,4 @@
-<div id='text_1' class='text_block scroll-pane'>
+<div id='simple_text_block' class='dark_text_block scroll-pane'>
       <%= form_tag("/users/login", method: "post", class: 'data-pjax') do %>
           <%= label_tag(:q, "Никнейм:") %>
           <%= text_field_tag(:nickname) %>
@@ -7,5 +7,5 @@
           <%= submit_tag("Войти") %>
       <% end %>
       <%= link_to "Регистрация", new_user_path(), class: 'data-pjax-link' %>
-      <div style="color: red"><%= @message %></div>
+      <div id="login_error_message"><%= @message %></div>
 </div>

@@ -34,7 +34,7 @@
 		display: none;
 	}
 	
-	.text_block {
+	.dark_text_block {
 		color: white;
 		background: black;
 		opacity: 0.5;
@@ -58,7 +58,7 @@
 		color: green;
     }
 	
-	#text_1 {
+	#simple_text_block {
 		text-align: left;
 		position: absolute;
 		left: 25%;
@@ -68,7 +68,7 @@
 		height:480px;
 	}
 	
-	.text_block > p {
+	.dark_text_block > p {
 		margin: 1em;
 		text-indent: 1ex;
 	}
