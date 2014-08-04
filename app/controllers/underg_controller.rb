@@ -7,8 +7,4 @@ class UndergController < ApplicationController
 	def aboutUs()
 		render :layout => !pjax?
 	end
-
-	def account()
-		render :layout => !pjax?
-  end
 end

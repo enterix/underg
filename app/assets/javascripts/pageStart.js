@@ -1,5 +1,5 @@
 function pageStart() {
-    $(document).pjax('[data-pjax] a, a[data-pjax], .data-pjax', '#main');   //pjaxConfiguration
+    $(document).pjax('[data-pjax] a, a[data-pjax], .data-pjax-link', '#main');   //pjaxConfiguration
 
     $(document).on('submit', '.data-pjax', function (event) {
         $.pjax.submit(event, '#main')
