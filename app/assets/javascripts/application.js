@@ -6,8 +6,4 @@
 //= require jquery.pjax
 //= require jquery.validate
 
-//= require menu
-//= require mwheelIntent
-//= require pages
-//= require pageStart
-//= require resizer
+//=require_tree
