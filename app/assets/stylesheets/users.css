@@ -1,3 +1,7 @@
 #login_error_message {
     color: red;
 }
+
+#new_error_explanation {
+    color: red
+}

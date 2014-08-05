@@ -15,7 +15,7 @@ function users_new_intialize() {
                     rangelength: [5, 20],
                     lettersNumbersOnly: true,
                     remote: {
-                        url: 'check_nick',
+                        url: '/users/check_nick',
                         type: 'GET',
                         data: {
                             nickname: function() {
@@ -37,7 +37,7 @@ function users_new_intialize() {
                     required: true,
                     email: true,
                     remote: {
-                        url: 'check_email',
+                        url: '/users/check_email',
                         type: 'GET',
                         data: {
                             email: function() {

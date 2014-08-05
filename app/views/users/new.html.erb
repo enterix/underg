@@ -2,7 +2,7 @@
 
 <div id='simple_text_block' class='dark_text_block scroll-pane'>
   <% if @user.errors.any? %>
-      <div id="error_explanation" style="color: red">
+      <div id="new_error_explanation">
         <h2>Проверьте поля формы регистрации:</h2>
         <ul>
           <% @user.errors.full_messages.each do |msg| %>
