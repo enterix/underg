@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            date_of_birth:
+              before: не корректна
+
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        nickname: Никнейм
+        date_of_birth: Дата рождения
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        email: Email

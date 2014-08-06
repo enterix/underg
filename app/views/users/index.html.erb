@@ -1,6 +1,6 @@
 <div id='simple_text_block' class='dark_text_block scroll-pane'>
     <div align="center">
-        <%= @message %>, вы успешло залогинились.
-        <a href="/users/logout">Выход</a>
+        <%= @message %>, <%= I18n.t('views.messages.successfully_logged')%>
+        <a href="/users/logout"><%= I18n.t('views.messages.exit') %></a>
     </div>
 </div>

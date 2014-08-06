@@ -1,11 +1,13 @@
 <div id='simple_text_block' class='dark_text_block scroll-pane'>
       <%= form_tag("/users/login", method: "post", class: 'data-pjax') do %>
-          <%= label_tag(:q, "Никнейм:") %>
+          <%= label_tag(:q, I18n.t('activerecord.attributes.user.nickname')) %>
           <%= text_field_tag(:nickname) %>
-          <%= label_tag(:q, "Пароль:") %>
+          <%= label_tag(:q, I18n.t('activerecord.attributes.user.password')) %>
           <%= password_field_tag(:password) %>
-          <%= submit_tag("Войти") %>
+          <%= submit_tag(I18n.t('views.submits.login')) %>
       <% end %>
-      <%= link_to "Регистрация", new_user_path(), class: 'data-pjax-link' %>
-      <div id="login_error_message"><%= @message %></div>
+      <% if @user %>
+        <div id="login_error_message"><%= I18n.t('views.messages.wrong_password_or_login') %></div>
+      <% end %>
+      <%= link_to I18n.t('views.submits.register'), new_user_path(), class: 'data-pjax-link' %>
 </div>

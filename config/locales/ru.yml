@@ -120,6 +120,11 @@ ru:
   errors:
     format: ! '%{attribute} %{message}'
     messages:
+      is_using: уже занят
+      should_be_different_with_nickname: и никнейм должны быть разными
+      only_letters_and_digits: может состоять только из букв или цифр английского алфавита
+      incorrect_male: не корректный
+      incorrect_female: не корректна
       accepted: нужно подтвердить
       blank: не может быть пустым
       present: нужно оставить пустым

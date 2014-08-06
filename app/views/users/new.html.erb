@@ -3,7 +3,7 @@
 <div id='simple_text_block' class='dark_text_block scroll-pane'>
   <% if @user.errors.any? %>
       <div id="new_error_explanation">
-        <h2>Проверьте поля формы регистрации:</h2>
+        <h2><%= I18n.t('views.messages.check_registration_form') %></h2>
         <ul>
           <% @user.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -13,22 +13,22 @@
   <% end %>
 
   <%= form_for :user, url: {action: "create"}, html: {class: 'data-pjax', id: 'registration_form'} do |f| %>
-      <%= label_tag(:q, "Никнейм:") %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.nickname')) %> <br>
       <%= f.text_field :nickname, id: "user_nickname" %>
       <br>
-      <%= label_tag(:q, "Пароль:") %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.password')) %> <br>
       <%= f.password_field :password, id: "user_password" %>
       <br>
       <%= f.password_field :password_confirmation %>
       <br>
-      <%= label_tag(:q, "Email:") %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.email')) %> <br>
       <%= f.text_field :email %>
       <br>
-      <%= label_tag(:q, "Дата рождения:") %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.date_of_birth')) %> <br>
       <%= f.date_select :date_of_birth%>
       <br>
 
-      <%= f.submit "Зарегистрироваться" %>
+      <%= f.submit I18n.t('views.submits.register') %>
 
   <% end %>
 </div>

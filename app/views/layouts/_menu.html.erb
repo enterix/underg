@@ -1,10 +1,10 @@
 <div id=menu_line>
 	<div id='css-menu'>
 		<ul>
-			<li id='menu_1'><%= link_to("Главная", root_path, class: 'data-pjax-link') %></li>
-			<li id='menu_2' class='css-menu-central'><%= link_to("Найти кооператив", '/coop_search', class: 'data-pjax-link') %></li>
-			<li id='menu_3' class='css-menu-central'><%= link_to('Аккуант', users_path, class: 'data-pjax-link') %></li>
-			<li id='menu_4' class='css-menu-central'><%= link_to("О нас", about_us_path, class: 'data-pjax-link') %></li>
+			<li id='menu_1'><%= link_to(I18n.t('views.menu.main'), root_path, class: 'data-pjax-link') %></li>
+			<li id='menu_2' class='css-menu-central'><%= link_to(I18n.t('views.menu.find_coop'), '/coop_search', class: 'data-pjax-link') %></li>
+			<li id='menu_3' class='css-menu-central'><%= link_to(I18n.t('views.menu.account'), users_path, class: 'data-pjax-link') %></li>
+			<li id='menu_4' class='css-menu-central'><%= link_to(I18n.t('views.menu.about_us'), about_us_path, class: 'data-pjax-link') %></li>
 		</ul>
 	</div>
 </div>

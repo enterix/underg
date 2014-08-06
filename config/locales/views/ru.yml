@@ -1,0 +1,18 @@
+ru:
+  views:
+    submits:
+      register: Зарегистрироваться
+      login: Вход
+    messages:
+      successfully_logged: Вы успешно залогинились.
+      exit: Выход
+      good_bye: До свидания!
+      check_registration_form: Проверьте поля формы регистрации
+      wrong_password_or_login: Вы ввели неправильный пароль или никнейм
+    textes:
+      about_us: Мы это Мы
+    menu:
+      main: Главная
+      about_us: О нас
+      find_coop: Найти кооператив
+      account: Аккаунт

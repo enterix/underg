@@ -20,8 +20,8 @@ class UsersController < ApplicationController
       render :layout => !pjax?
     else
       logger.debug params[:password]
-      if user = User.where(nickname: params[:nickname], password: params[:password]).first
-        session[:user_id] = user.nickname
+      if @user = User.where(nickname: params[:nickname], password: params[:password]).first
+        session[:user_id] = @user.nickname
         redirect_to users_path
       else
         @message = "Вы ввели неправильный никнейм или пароль"
