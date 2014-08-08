@@ -52,11 +52,11 @@ class UsersController < ApplicationController
 
   def create()
     @user = User.new(user_params)
-    if lang = Language.where(id: params[:user][:lang_1])
-      @user.languages << lang
-    end
-    @user.languages << lang if lang = Language.where(id: params[:user][:lang_2])
-    @user.languages << lang if lang = Language.where(id: params[:user][:lang_3])
+    langs = Language.find([params[:user][:lang_1], params[:user][:lang_2], params[:user][:lang_3]].uniq!)
+    @user.languages = langs if langs
+
+    logger.debug(@user.languages.include? Language.where(id: params[:user][:lang_2]))
+    logger.debug "====================================================================================================================================="
 
     if(!@user.save)
       render 'new', :layout => !pjax?

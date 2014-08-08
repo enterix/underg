@@ -1,4 +1,7 @@
-<script>users_new_intialize()</script>
+<script>
+    users_new_intialize()
+</script>
+<script type="text/javascript" src="/localization/messages_<%= params[:locale] ? params[:locale] : 'ru' %>.js"> </script>
 
 <div id='simple_text_block' class='dark_text_block scroll-pane'>
   <% if @user.errors.any? %>

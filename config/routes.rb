@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|ru/ do
+  scope "(:locale)", locale: /en|ru|uk/ do
     root 'underg#index'
     get '/about_us', to: 'underg#aboutUs'
     post '/users/login', to: 'users#login'

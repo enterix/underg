@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   validates_date  :date_of_birth, :before => Time.now
   validates_inclusion_of :sex, :in => [true, false], presence: true
   validate :existLangs
-  validate :langsNotEqueal
 
   private
   def passwordNotEqualToNickname
@@ -23,13 +22,6 @@ class User < ActiveRecord::Base
 
   def existLangs()
       errors.add(:language, I18n.t('errors.messages.present')) if self.languages.empty?
-  end
-
-  def langsNotEqueal()
-    errors.add(:language, I18n.t('errors.messages.should_be_different_with_others_langs')) if (self.languages[0] == self.languages[1] &&
-        self.languages[2] != nil) ||
-          (self.languages[0] == self.languages[2] && self.languages[2] != nil) ||
-          (self.languages[2] == self.languages[1] && self.languages[2] != nil)
   end
 
   def isNickNameAvaliable

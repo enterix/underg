@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808023503) do
+ActiveRecord::Schema.define(version: 20140808031541) do
 
   create_table "forms", force: true do |t|
     t.date     "age_from"
@@ -54,14 +54,6 @@ ActiveRecord::Schema.define(version: 20140808023503) do
     t.date     "date_of_birth"
     t.boolean  "sex"
   end
-
-  create_table "users_languages", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "language_id"
-  end
-
-  add_index "users_languages", ["language_id"], name: "index_users_languages_on_language_id"
-  add_index "users_languages", ["user_id"], name: "index_users_languages_on_user_id"
 
   create_table "world_parts", force: true do |t|
     t.string   "name"
