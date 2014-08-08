@@ -13,22 +13,33 @@
   <% end %>
 
   <%= form_for :user, url: {action: "create"}, html: {class: 'data-pjax', id: 'registration_form'} do |f| %>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.nickname')) %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.nickname')) %>
       <%= f.text_field :nickname, id: "user_nickname" %>
       <br>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.password')) %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.password')) %>
       <%= f.password_field :password, id: "user_password" %>
       <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.password_confirmation')) %>
       <%= f.password_field :password_confirmation %>
       <br>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.email')) %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.email')) %>
       <%= f.text_field :email %>
       <br>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.date_of_birth')) %> <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.sex')) %>
+      <%= f.select :sex, [[I18n.t('views.forms.female'), false], [I18n.t('views.forms.male'), true]] %>
+      <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.date_of_birth')) %>
       <%= f.date_select :date_of_birth%>
       <br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.language')) %>
+      <%= lang_tag("user[lang_1]") %><br>
+      <%= label_tag(:q, I18n.t('views.forms.optional_lang')) %>
+      <%= lang_tag("user[lang_2]") %><br>
+      <%= label_tag(:q, I18n.t('views.forms.optional_lang')) %>
+      <%= lang_tag("user[lang_3]") %>
+      <br>
 
-      <%= f.submit I18n.t('views.submits.register') %>
+      <%= f.submit I18n.t('views.forms.submits.register') %>
 
   <% end %>
 </div>

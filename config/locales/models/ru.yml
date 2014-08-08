@@ -16,3 +16,5 @@ ru:
         password: Пароль
         password_confirmation: Подтверждение пароля
         email: Email
+        sex: Пол
+        language: Язык

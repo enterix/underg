@@ -120,6 +120,7 @@ ru:
   errors:
     format: ! '%{attribute} %{message}'
     messages:
+      should_be_different_with_others_langs: должен отличаться от других указанных вами языков
       is_using: уже занят
       should_be_different_with_nickname: и никнейм должны быть разными
       only_letters_and_digits: может состоять только из букв или цифр английского алфавита

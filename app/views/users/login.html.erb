@@ -4,10 +4,10 @@
           <%= text_field_tag(:nickname) %>
           <%= label_tag(:q, I18n.t('activerecord.attributes.user.password')) %>
           <%= password_field_tag(:password) %>
-          <%= submit_tag(I18n.t('views.submits.login')) %>
+          <%= submit_tag(I18n.t('views.forms.submits.login')) %>
       <% end %>
-      <% if @user %>
+      <% if @wrong_name_or_pass %>
         <div id="login_error_message"><%= I18n.t('views.messages.wrong_password_or_login') %></div>
       <% end %>
-      <%= link_to I18n.t('views.submits.register'), new_user_path(), class: 'data-pjax-link' %>
+      <%= link_to I18n.t('views.forms.submits.register'), new_user_path(), class: 'data-pjax-link' %>
 </div>

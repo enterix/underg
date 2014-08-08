@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'users/check_nick', to: 'users#ajaxNickChecker'
     get 'users/check_email', to: 'users#ajaxEmailChecker'
     resources :users, except: :destroy
+    resources :forms
   end
   #if didn't find anything - it can be root with locale
   get '/:locale', to: 'underg#index', locale: /en|ru/

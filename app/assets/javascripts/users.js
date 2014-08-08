@@ -48,6 +48,9 @@ function users_new_intialize() {
                 },
                 "user[date_of_birth]": {
                     required: true
+                },
+                "user[lang_1]": {
+                    required: true
                 }
             },
 

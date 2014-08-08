@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.nickname
         redirect_to users_path
       else
-        @message = "Вы ввели неправильный никнейм или пароль"
+        @wrong_name_or_pass = true
         render :layout => !pjax?
       end
     end
@@ -52,6 +52,12 @@ class UsersController < ApplicationController
 
   def create()
     @user = User.new(user_params)
+    if lang = Language.where(id: params[:user][:lang_1])
+      @user.languages << lang
+    end
+    @user.languages << lang if lang = Language.where(id: params[:user][:lang_2])
+    @user.languages << lang if lang = Language.where(id: params[:user][:lang_3])
+
     if(!@user.save)
       render 'new', :layout => !pjax?
     else
@@ -61,6 +67,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :password, :password_confirmation, :email, :date_of_birth)
+    params.require(:user).permit(:nickname, :password, :password_confirmation,
+                                 :email, :date_of_birth, :sex)
   end
 end
