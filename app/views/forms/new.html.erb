@@ -1,0 +1,39 @@
+<script type="text/javascript" src="/localization/messages_<%= params[:locale] ? params[:locale] : 'ru' %>.js"> </script>
+
+<div id='simple_text_block' class='dark_text_block scroll-pane'>
+  <% if @form.errors.any? %>
+      <div id="new_error_explanation">
+        <h2><%= I18n.t('views.messages.check_form_creation_form') %></h2>
+        <ul>
+          <% @form.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+  <%= form_for :form, url: {action: "create"}, html: {class: 'data-pjax', id: 'form-new'} do |f| %>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.game')) %>
+      <%= game_tag "form[game]" %><br>
+      <%= label_tag(:world_part, I18n.t('activerecord.attributes.user.worldparts')) %>:<br>
+      <%= label_tag(:q, I18n.t('views.forms.europe')) %>
+      <%= f.radio_button :europe, 1%><br>
+      <%= label_tag(:q, I18n.t('views.forms.australia')) %>
+      <%= f.radio_button :australia, 2 %><br>
+      <%= label_tag(:q, I18n.t('views.forms.asia')) %>
+      <%= f.radio_button :asia, 3 %><br>
+      <%= label_tag(:q, I18n.t('views.forms.north_america')) %>
+      <%= f.radio_button :north_america, 4 %><br>
+      <%= label_tag(:q, I18n.t('views.forms.south_america')) %>
+      <%= f.radio_button :south_america, 5 %><br>
+      <%= label_tag(:q, I18n.t('views.forms.africa')) %>
+      <%= f.radio_button :africa, 6 %><br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.coop_age_from')) %>
+      <%= f.select :age_from, options_for_select([[I18n.t('views.forms.any'), -1]].concat (0...100).map {|i| [i, i]}) %><br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.user.coop_age_upto')) %>
+      <%= f.select :age_upto, options_for_select([[I18n.t('views.forms.any'), -1]].concat (0...100).map {|i| [i, i]}) %><br>
+
+      <%= f.submit I18n.t('views.forms.submits.create_from') %>
+
+  <% end %>
+</div>

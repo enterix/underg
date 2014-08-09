@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     else
       logger.debug params[:password]
       if @user = User.where(nickname: params[:nickname], password: params[:password]).first
-        session[:user_id] = @user.nickname
+        session[:user_id] = @user.id
         redirect_to users_path
       else
         @wrong_name_or_pass = true
@@ -52,11 +52,9 @@ class UsersController < ApplicationController
 
   def create()
     @user = User.new(user_params)
-    langs = Language.find([params[:user][:lang_1], params[:user][:lang_2], params[:user][:lang_3]].uniq!)
+    langs_id_array = [params[:user][:lang_1], params[:user][:lang_2], params[:user][:lang_3]].uniq - ['0']
+    langs = Language.find(langs_id_array)
     @user.languages = langs if langs
-
-    logger.debug(@user.languages.include? Language.where(id: params[:user][:lang_2]))
-    logger.debug "====================================================================================================================================="
 
     if(!@user.save)
       render 'new', :layout => !pjax?

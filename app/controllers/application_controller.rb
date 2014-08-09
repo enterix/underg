@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
   def pjax?
     env['HTTP_X_PJAX']
   end
+
+  def get_user
+    user = User.where(id: session[:user_id]).first
+  end
 end

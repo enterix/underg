@@ -18,3 +18,7 @@ ru:
         email: Email
         sex: Пол
         language: Язык
+        worldparts: "Части света"
+        game: Игра
+        coop_age_from: Возраст напарника от
+        coop_age_upto: До
