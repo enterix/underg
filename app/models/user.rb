@@ -4,16 +4,18 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :languages
 
   validates :nickname, presence: true, length: { minimum: 5, maximum: 20 },
-            format: { with: /\A[a-zA-Z0-9]+\z/, message: I18n.t('errors.messages.only_letters_and_digits')}
+            format: { with: /\A[a-zA-Z0-9-_]+\z/, message: I18n.t('errors.messages.only_letters_and_digits')}
   validate :isNickNameAvaliable
   validates :password, confirmation: true, length: { minimum: 6, maximum: 30 }
   validate :passwordNotEqualToNickname
   validates :password_confirmation, presence: true
   validates :email, email_format: {message: I18n.t('errors.messages.incorrect_male')}
   validate :isEmailAvaliable
-  validates_date  :date_of_birth, :before => Time.now
+  validates_date  :date_of_birth, before: lambda {Time.now}
+  validates :date_of_birth, presence: true
   validates_inclusion_of :sex, :in => [true, false], presence: true
   validate :existLangs
+  validates_inclusion_of :worldpart, presence: true, :in => 1..6
 
   private
   def passwordNotEqualToNickname

@@ -5,20 +5,29 @@ ru:
         user:
           attributes:
             date_of_birth:
-              before: не корректна
+              before: дата не корректна
+        form:
+          attributes:
+            age_upto:
+              invalid_date: дата некорректна
+            age_from:
+              invalid_date: дата некорректна
 
     models:
       user: Пользователь
     attributes:
       user:
-        nickname: Никнейм
-        date_of_birth: Дата рождения
-        password: Пароль
-        password_confirmation: Подтверждение пароля
-        email: Email
-        sex: Пол
-        language: Язык
-        worldparts: "Части света"
-        game: Игра
-        coop_age_from: Возраст напарника от
-        coop_age_upto: До
+        nickname: 'Никнейм:'
+        date_of_birth: 'Дата рождения:'
+        password: 'Пароль:'
+        password_confirmation: 'Подтверждение пароля:'
+        email: 'Email:'
+        sex: 'Пол:'
+        language: 'Язык:'
+
+      form:
+        age_from: 'Возраст напарника от:'
+        age_upto: 'Возраст напарника до:'
+        game: 'Игра:'
+        worldparts: "Части света:"
+        count: 'Размер группы (включая вас):'

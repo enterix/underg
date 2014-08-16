@@ -1,6 +1,6 @@
 function users_new_intialize() {
     jQuery.validator.addMethod("lettersNumbersOnly", function(value, element) {
-            return this.optional(element) || /^[a-zA-Z0-9]+$/i.test(value);
+            return this.optional(element) || /^[a-zA-Z0-9-_]+$/i.test(value);
         });
 
     jQuery.validator.addMethod("notEqualTo", function(value, element, param) {

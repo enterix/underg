@@ -1,0 +1,14 @@
+<div id='simple_text_block' class='dark_text_block scroll-pane'>
+  <% if @groups %>
+      <% @groups.map { |group| %>
+          <br><%= group.id %>
+          [<% group.forms.map { |form| %>
+            User: <%= form.user.nickname %>
+            Game: <%= form.game.name %>
+            |
+          <% } %> ]
+      <% } %>
+  <% else %>
+  <div color="red">No groups found</div>
+  <% end %>
+</div>

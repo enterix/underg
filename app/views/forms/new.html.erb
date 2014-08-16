@@ -13,25 +13,27 @@
   <% end %>
 
   <%= form_for :form, url: {action: "create"}, html: {class: 'data-pjax', id: 'form-new'} do |f| %>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.game')) %>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.form.game')) %>
       <%= game_tag "form[game]" %><br>
-      <%= label_tag(:world_part, I18n.t('activerecord.attributes.user.worldparts')) %>:<br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.form.count')) %>
+      <%= select_tag "form[count]", options_for_select([[2, 2], [3, 3], [4, 4], [5, 5]]) %><br>
+      <%= label_tag(:world_part, I18n.t('activerecord.attributes.form.worldparts')) %><br>
       <%= label_tag(:q, I18n.t('views.forms.europe')) %>
       <%= f.radio_button :europe, 1%><br>
       <%= label_tag(:q, I18n.t('views.forms.australia')) %>
-      <%= f.radio_button :australia, 2 %><br>
+      <%= f.radio_button :australia, 1 %><br>
       <%= label_tag(:q, I18n.t('views.forms.asia')) %>
-      <%= f.radio_button :asia, 3 %><br>
+      <%= f.radio_button :asia, 1 %><br>
       <%= label_tag(:q, I18n.t('views.forms.north_america')) %>
-      <%= f.radio_button :north_america, 4 %><br>
+      <%= f.radio_button :north_america, 1 %><br>
       <%= label_tag(:q, I18n.t('views.forms.south_america')) %>
-      <%= f.radio_button :south_america, 5 %><br>
+      <%= f.radio_button :south_america, 1 %><br>
       <%= label_tag(:q, I18n.t('views.forms.africa')) %>
-      <%= f.radio_button :africa, 6 %><br>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.coop_age_from')) %>
-      <%= f.select :age_from, options_for_select([[I18n.t('views.forms.any'), -1]].concat (0...100).map {|i| [i, i]}) %><br>
-      <%= label_tag(:q, I18n.t('activerecord.attributes.user.coop_age_upto')) %>
-      <%= f.select :age_upto, options_for_select([[I18n.t('views.forms.any'), -1]].concat (0...100).map {|i| [i, i]}) %><br>
+      <%= f.radio_button :africa, 1 %><br>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.form.age_from')) %>
+      <%= f.select :age_upto, options_for_select([[I18n.t('views.forms.any'), 0]].concat (1...100).map {|i| [i, i]}) %>
+      <%= label_tag(:q, I18n.t('activerecord.attributes.form.age_upto')) %>
+      <%= f.select :age_from, options_for_select([[I18n.t('views.forms.any'), 100]].concat (0...99).map {|i| [i, i]}) %><br>
 
       <%= f.submit I18n.t('views.forms.submits.create_from') %>
 

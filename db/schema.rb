@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809010348) do
+ActiveRecord::Schema.define(version: 20140816025337) do
 
   create_table "forms", force: true do |t|
-    t.integer  "age_from"
-    t.integer  "age_upto"
+    t.date     "age_from"
+    t.date     "age_upto"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "game_id"
@@ -26,15 +26,24 @@ ActiveRecord::Schema.define(version: 20140809010348) do
     t.boolean  "north_america"
     t.boolean  "south_america"
     t.boolean  "africa"
+    t.integer  "group_id"
   end
 
   add_index "forms", ["game_id"], name: "index_forms_on_game_id"
+  add_index "forms", ["group_id"], name: "index_forms_on_group_id"
   add_index "forms", ["user_id"], name: "index_forms_on_user_id"
 
   create_table "games", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "looking"
   end
 
   create_table "languages", force: true do |t|
@@ -59,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140809010348) do
     t.string   "email"
     t.date     "date_of_birth"
     t.boolean  "sex"
+    t.integer  "worldpart"
   end
 
 end

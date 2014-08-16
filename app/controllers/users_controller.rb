@@ -50,6 +50,7 @@ class UsersController < ApplicationController
   end
 
   def create()
+    logger.debug user_params
     @user = User.new(user_params)
     langs_id_array = [params[:user][:lang_1], params[:user][:lang_2], params[:user][:lang_3]].uniq - ['0']
     langs = Language.where(id: langs_id_array)
@@ -65,6 +66,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:nickname, :password, :password_confirmation,
-                                 :email, :date_of_birth, :sex)
+                                 :email, :date_of_birth, :sex, :worldpart)
   end
 end

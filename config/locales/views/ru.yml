@@ -9,7 +9,7 @@ ru:
       wrong_password_or_login: Вы ввели неправильный пароль или никнейм
       you_are_looking_for_this_game_already: "- вы уже ищите напарника для этой игры, отредактируйте старую форму поиска"
       too_many_games: одновременно можно искать напарников не больше чем для 3-х игр
-      at_least_one_worldpart: "- выберите хотябы одну"
+      at_least_one_worldpart: "- выберите хотя бы одну"
     textes:
       about_us: Мы это Мы
     menu:
@@ -24,7 +24,7 @@ ru:
         create_from: Запустить поиск
       male: Мужчина
       female: Женщина
-      optional_lang: Дополнительный язык
+      optional_lang: 'Дополнительный язык:'
       europe: Европа
       australia: Австралия
       asia: Азия
@@ -32,3 +32,4 @@ ru:
       south_america: Южная Америка
       africa: Африка
       any: Любой
+      your_location: 'Ваше местоположение:'
